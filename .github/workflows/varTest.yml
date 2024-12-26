@@ -1,17 +1,12 @@
-name: varTest
-run-name: run varTest
+name: varTest context text
+run-name: run varTest context text
 
 on:
   workflow_dispatch
 
-env:
-  DAY_OF_WEEK: Thursday
-
 jobs:
   greeting_job:
     runs-on: ubuntu-latest
-    env:
-      Greeting: Hello
     steps:
       - name: "Say Hello VAR_TEST"
         run: echo "Hello ${{ vars.VARS_TEST }}"
