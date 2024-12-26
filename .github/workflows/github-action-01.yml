@@ -2,7 +2,9 @@
 
 name: Test GitHub Actions-01
 run-name: Run GitHub Actions-01 🚀
-on: [push]
+on: 
+    workflow_dispatch
+
 
 jobs:
   Test-GitHub-Actions:
