@@ -1,0 +1,11 @@
+name: Checkout Workflow
+on: workflow_dispatch
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ls -al
+      - uses: actions/checkout@v4
+        with:
+          path: checkout-dir
+      - run: ls -al checkout-dir
