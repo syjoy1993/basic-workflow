@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Check Inputs Variable"
-	run: echo "Hello, ${{ inputs.your_name }}"
+        run: echo "Hello, ${{ inputs.your_name }}"
      
