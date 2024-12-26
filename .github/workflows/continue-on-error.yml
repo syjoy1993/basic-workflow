@@ -1,0 +1,10 @@
+name: Steps workflow continue-on-error
+on: push
+jobs:
+  keep-going-work:
+    runs-on: ubuntu-latest
+    steps:
+      - id: dev
+        continue-on-error: true
+        run: exit 1
+      - run: echo "Keep going job"
