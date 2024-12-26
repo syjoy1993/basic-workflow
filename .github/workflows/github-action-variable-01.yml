@@ -13,6 +13,7 @@ jobs:
       Greeting: Hello
     steps:
       - name: "Say Hello GithubActions it's Thursday"
+        if: ${{ env.DAY_OF_WEEK == 'Thursday' }}
         run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
         env:
           First_Name: GithubActions
