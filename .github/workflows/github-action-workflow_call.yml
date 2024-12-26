@@ -1,0 +1,17 @@
+
+name: Workflows Names - called_workflow
+run-name: Runs Names - called_workflow 🚀
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+
+jobs:
+  Jobs-Names-called_workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo enviroment
+        run: echo Setup for ${{ inputs.environment }}
