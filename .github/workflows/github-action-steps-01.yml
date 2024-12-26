@@ -1,14 +1,12 @@
-name: Steps Workflow
+name: Steps workflow
 on: push
 jobs:
-  calculate-features:
+  num-job:
     runs-on: ubuntu-latest
     steps:
-      - id: generate-num1
-        run: echo "num=$(($RANDOM % 10 + 100))" >> "$GITHUB_OUTPUT"
-      - id: generate-num2
-        run: echo "num=$(($RANDOM % 10 + 100))" >> "$GITHUB_OUTPUT"
-      - run: echo $((${{ steps.generate-num1.outputs.num }} + ${{ steps.generate-num2.outputs.num }}))
-      - run: echo $((${{ steps.generate-num1.outputs.num }} - ${{ steps.generate-num2.outputs.num }}))
-      - run: echo $((${{ steps.generate-num1.outputs.num }} * ${{ steps.generate-num2.outputs.num }}))
-      - run: echo $((${{ steps.generate-num1.outputs.num }} / ${{ steps.generate-num2.outputs.num }}))
+      - id: generate-num
+        run: echo "num=$(($RANDOM % 2))" >> "$GITHUB_OUTPUT"
+      - if: steps.generate-num.outputs.num == 0
+        run: echo "zero steps"
+      - if: steps.generate-num.outputs.num == 1
+        run: echo "not zero steps"
