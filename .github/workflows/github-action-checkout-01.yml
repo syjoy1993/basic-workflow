@@ -1,6 +1,6 @@
 name: Checkout Workflow
 on:
-  workflow_dispatch
+  workflow_dispatch:
 jobs:
   checkout:
     runs-on: ubuntu-latest
