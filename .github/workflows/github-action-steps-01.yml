@@ -1,0 +1,13 @@
+name: Steps workflow
+on: push
+jobs:
+  num-job:
+    runs-on: ubuntu-latest
+    steps:
+      - id: generate-num
+        run: echo "num=$(($RANDOM % 2))" >> "$GITHUB_OUTPUT"
+      - if: steps.generate-num.outputs.num == 0
+        run: echo "zero steps"
+      - if: steps.generate-num.outputs.num == 1
+        run: echo "not zero steps"
+
