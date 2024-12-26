@@ -1,0 +1,12 @@
+name: varTest context text
+run-name: run varTest context text
+
+on:
+  workflow_dispatch
+
+jobs:
+  greeting_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Say Hello VAR_TEST"
+        run: echo "Hello ${{ vars.VARS_TEST }}"
